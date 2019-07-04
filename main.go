@@ -14,9 +14,9 @@ const (
 	fp = "./grades_site.htm"
 
 	// Selectors
-	gradeSelector         = "span[title=\"7-trins-skalaen\"]"
-	pointSelector         = "td:nth-last-child(2)"
-	validTableRowSelector = "tr:has(td:has(span[title=\"7-trins-skalaen\"]))"
+	gradeSelector         = `span[title="7-trins-skalaen"]`
+	pointSelector         = `td:nth-last-child(2)`
+	validTableRowSelector = `tr:has(td:has(span[title="7-trins-skalaen"]))`
 
 	// Regular expressions
 	gradeRegExp = `(-3|00|02|4|7|10|12)`
@@ -28,7 +28,6 @@ var matchGrade = regexp.MustCompile(gradeRegExp)
 var matchPoint = regexp.MustCompile(pointRegExp)
 
 func main() {
-	// res, err := http.Get("")
 	// Read file
 	f, err := os.Open(fp)
 	if err != nil {
